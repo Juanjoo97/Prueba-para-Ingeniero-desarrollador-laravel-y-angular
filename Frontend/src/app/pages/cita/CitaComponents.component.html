@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center h-screen w-screen">
+<div class="flex justify-center items-center  w-screen">
     <div #modal></div>
     <div
         class="w-4/5 sm:w-4/5 md:w-1/2 lg:w-1/4 border border-gray-300 shadow-lg transition-shadow hover:shadow-2xl bg-gradient-to-r from-blue-300 to-teal-300 rounded-3xl">
@@ -6,6 +6,8 @@
             <img width="50" height="50" class="justify-center mx-auto"
                 src="https://upload.wikimedia.org/wikipedia/commons/e/e8/USCO_Logo.png" alt="USCO Logo">
             <h1 class="text-2xl font-semibold">CITAS USCO</h1>
+            <p>Bienvenido {{ estudiante?.nombre }}</p>
+
         </div>
         <div class="p-4 flex justify-center">
             <button (click)="onSubmit()" type="submit"

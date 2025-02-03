@@ -5,23 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Cita;
 use App\Models\Medico;
+use App\Models\Estudiante;
+
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 
 class CitaController extends Controller
 {
+
+    // get citas por estudiantes
     public function citasPorEstudiante($estudiante_id): JsonResponse
     {
         $citas = Cita::where('estudiante_id', $estudiante_id)->get();
         return response()->json($citas);
     }
 
+    // get medicos
     public function medicosTotal(): JsonResponse
     {
-        $medicos = Medico::all();   
+        $medicos = Medico::all();
         return response()->json($medicos);
     }
 
+    // get estudiantes
+    public function estudiantesTotal(): JsonResponse
+    {
+        $estudiante = Estudiante::all();
+        return response()->json($estudiante);
+    }
+
+    // registrar citas
     public function registrarCita(Request $request): JsonResponse
     {
         $validator = Validator::make($request->all(), [
@@ -52,6 +65,7 @@ class CitaController extends Controller
         ], 201);
     }
 
+    // eliminar citas
     public function eliminarCita($id): JsonResponse
     {
         $cita = Cita::find($id);

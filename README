@@ -66,3 +66,17 @@ mysql -u usuario -p base_de_datos < create_tables.sql
 ```
 
 
+## Endpoints de la API
+
+| Método |               Endpoint              |           Descripción           |
+|--------|-------------------------------------|---------------------------------|
+| GET    | /citas/estudiante/${estudianteId}   | Obtiene cita del estudiante     |
+| POST   | /citas                              | Agenda cita                     |
+| DELETE | citas/${citaId}                     | Cancela cita                    |
+| GET    | /estudiantes-total                  | Obtiene lista de  estudiantes   |
+| GET    | /medicos-total                      | Obtiene lista de  medicos       |
+
+## [capture]
+![Captura de ejemplo](./capture_photos/imagen.png)
+![Captura de ejemplo](./capture_photos/imagen2.png)
+![Captura de ejemplo](./capture_photos/imagen3.png)

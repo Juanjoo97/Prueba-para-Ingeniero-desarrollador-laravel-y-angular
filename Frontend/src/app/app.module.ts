@@ -20,6 +20,5 @@ import { VerCitasComponent } from './pages/VerCita/ver-cita.component';
     VerCitasComponent
   ],
   providers: [],
-  // bootstrap: [AppComponent]
 })
 export class AppModule { }

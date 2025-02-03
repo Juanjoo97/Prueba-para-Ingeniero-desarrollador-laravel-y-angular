@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { GetCitaService } from '../../../service/hello-world.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { CitaService } from '../../../service/cita.service';
+interface Estudiante {
+  id: number;
+  nombre: string;
+  correo: string;
+  programa_academico: string;
+}
 @Component({
   selector: 'app-apihelloworld',
   templateUrl: './CitaComponents.component.html',
@@ -10,13 +16,27 @@ import { Router } from '@angular/router';
 })
 export class CitaComponents implements OnInit {
   citas: any[] = [];
-
-  constructor(private getCitaService: GetCitaService, private router: Router) { }
+  estudiantes: Estudiante[] = [];
+  estudiante: Estudiante | null = null;
+  public isLoading: boolean = true;
+  constructor(private citaService: CitaService, private router: Router) { }
 
   ngOnInit() {
-    this.getCitaService.getCitaMessage().subscribe((data) => {
-      this.citas = data;
-      console.log(this.citas);
+    this.citaService.getEstudiantes().subscribe({
+      next: (data) => {
+        const estudianteId = 1;
+        this.estudiantes = data.filter((estudiante: { id: number; }) => estudiante.id === estudianteId);
+        console.log(this.estudiantes)
+        if (this.estudiantes.length > 0) {
+          this.estudiante = this.estudiantes[0];
+        }
+
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.log(error)
+        this.isLoading = false;
+      }
     });
   }
 

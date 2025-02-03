@@ -20,8 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        VerifyCsrfToken::except(['citas', 'medicos']);
-        // VerifyCsrfToken::except(['medicos']);
-
+        VerifyCsrfToken::except(['citas', 'medicos', 'citas/*']);
     }
 }
