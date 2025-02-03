@@ -1,0 +1,56 @@
+<div class="flex justify-center items-center h-screen w-screen">
+    <div #modal></div>
+    <div
+        class="w-4/5 sm:w-4/5 md:w-1/2 lg:w-1/4 border border-gray-300 shadow-lg transition-shadow hover:shadow-2xl bg-gradient-to-r from-blue-300 to-teal-300 rounded-3xl">
+        <div class="p-4 text-center">
+            <svg (click)="goBack()" class="cursor-pointer" height="51" viewBox="0 0 512 512" width="51"
+                xmlns="http://www.w3.org/2000/svg">
+                <polyline points="244 400 100 256 244 112"
+                    style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
+                <line style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px"
+                    x1="120" x2="412" y1="256" y2="256" />
+            </svg>
+            <div class="text-center">
+                <h2>Agendar Cita</h2>
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="medico">Médico</label>
+                        <!-- <select id="medico" [(ngModel)]="cita.medico_id" name="medico" required>
+                      <option *ngFor="let medico of medicos" [value]="medico.id">{{ medico.nombre }} - {{ medico.especialidad }}</option>
+                    </select> -->
+                        <select id="medico" name="medico" required>
+                            <option *ngFor="let medico of medicos" [value]="medico.id">{{ medico.nombre }} - {{
+                                medico.especialidad
+                                }}</option>
+                        </select>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" [(ngModel)]="cita.fecha" name="fecha" required>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora" [(ngModel)]="cita.hora" name="hora" required>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora</label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agendar Cita</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

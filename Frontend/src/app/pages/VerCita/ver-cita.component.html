@@ -1,0 +1,26 @@
+<div class="flex justify-center items-center h-screen w-screen">
+  <div #modal></div>
+  <div
+    class="w-4/5 sm:w-4/5 md:w-1/2 lg:w-1/4 border border-gray-300 shadow-lg transition-shadow hover:shadow-2xl bg-gradient-to-r from-blue-300 to-teal-300 rounded-3xl">
+    <div class="p-4 text-center">
+      <svg (click)="goBack()" class="cursor-pointer" height="51" viewBox="0 0 512 512" width="51"
+        xmlns="http://www.w3.org/2000/svg">
+        <polyline points="244 400 100 256 244 112"
+          style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
+        <line style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" x1="120"
+          x2="412" y1="256" y2="256" />
+      </svg>
+      <div class="text-center">
+        <h2>Citas Programadas</h2>
+        <ul>
+          <li *ngFor="let cita of citas">
+            <p>Médico: {{ cita.medico.nombre }}</p>
+            <p>Fecha: {{ cita.fecha }}</p>
+            <p>Hora: {{ cita.hora }}</p>
+            <button (click)="cancelarCita(cita.id)">Cancelar</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
