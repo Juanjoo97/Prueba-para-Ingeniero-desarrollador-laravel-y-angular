@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CitaService {
-  private apiUrl = 'http://localhost:8000/api'; // URL de la API Laravel
+  private apiUrl = 'http://localhost:8000'; // URL de la API Laravel
 
   constructor(private http: HttpClient) {}
 
   getMedicos(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/medicos`);
+    return this.http.get(`${this.apiUrl}/medicos-total`);
   }
 
   agendarCita(cita: any): Observable<any> {
@@ -25,4 +25,6 @@ export class CitaService {
   cancelarCita(citaId: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/citas/${citaId}`);
   }
+
+  
 }

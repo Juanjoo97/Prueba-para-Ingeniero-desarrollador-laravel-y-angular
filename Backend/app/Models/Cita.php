@@ -9,9 +9,26 @@ class Cita extends Model
 {
     use HasFactory;
 
-    protected $table = 'cita';
+    // Desactivar los timestamps automáticos
+    public $timestamps = false;
+
+    protected $table = 'citas';
 
     protected $fillable = [
-        'estudiante_id', 'fecha', 'hora', 'descripcion', 'estado'
+        'estudiante_id',
+        'medico_id',
+        'fecha',
+        'hora',
+        'estado',
     ];
+
+    public function estudiante()
+    {
+        return $this->belongsTo(Estudiante::class, 'estudiante_id');
+    }
+
+    public function medico()
+    {
+        return $this->belongsTo(Medico::class, 'medico_id');
+    }
 }

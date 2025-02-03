@@ -11,13 +11,17 @@
           x2="412" y1="256" y2="256" />
       </svg>
       <div class="text-center">
-        <h2>Citas Programadas</h2>
+        <div class="p-4 text-center">
+          <img width="50" height="50" class="justify-center mx-auto"
+              src="https://upload.wikimedia.org/wikipedia/commons/e/e8/USCO_Logo.png" alt="USCO Logo">
+          <h1 class="text-2xl font-semibold">CITAS PROGRAMADAS</h1>
+      </div>
         <ul>
           <li *ngFor="let cita of citas">
             <p>Médico: {{ cita.medico.nombre }}</p>
             <p>Fecha: {{ cita.fecha }}</p>
             <p>Hora: {{ cita.hora }}</p>
-            <button (click)="cancelarCita(cita.id)">Cancelar</button>
+            <button (click)="cancelarCita(cita.id)">Cancelar Cita</button>
           </li>
         </ul>
       </div>

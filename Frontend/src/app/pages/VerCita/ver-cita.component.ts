@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CitaService } from '../../../service/cita.service';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 @Component({
   selector: 'app-ver-cita',
   templateUrl: './ver-cita.component.html',
-  styleUrls: ['./ver-cita.component.scss']
+  styleUrls: ['./ver-cita.component.scss'],
+  imports: [CommonModule], // <-- Importa CommonModule aqu
 })
 export class VerCitasComponent implements OnInit {
   citas: any[] = [];
@@ -12,7 +13,7 @@ export class VerCitasComponent implements OnInit {
   constructor(private citaService: CitaService, private location: Location) { }
 
   ngOnInit(): void {
-    const estudianteId = 1; // Suponiendo que el estudiante con ID 1 está logueado
+    const estudianteId = 2; // Suponiendo que el estudiante con ID 1 está logueado
     this.citaService.getCitasEstudiante(estudianteId).subscribe(data => {
       this.citas = data;
     });

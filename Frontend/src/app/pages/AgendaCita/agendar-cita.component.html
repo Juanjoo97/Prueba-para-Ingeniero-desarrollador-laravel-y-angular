@@ -11,17 +11,21 @@
                     x1="120" x2="412" y1="256" y2="256" />
             </svg>
             <div class="text-center">
-                <h2>Agendar Cita</h2>
+                <div class="p-4 text-center">
+                    <img width="50" height="50" class="justify-center mx-auto"
+                        src="https://upload.wikimedia.org/wikipedia/commons/e/e8/USCO_Logo.png" alt="USCO Logo">
+                    <h1 class="text-2xl font-semibold">REGISTRAR CITAS</h1>
+                </div>
                 <form (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <label for="medico">Médico</label>
                         <!-- <select id="medico" [(ngModel)]="cita.medico_id" name="medico" required>
                       <option *ngFor="let medico of medicos" [value]="medico.id">{{ medico.nombre }} - {{ medico.especialidad }}</option>
                     </select> -->
-                        <select id="medico" name="medico" required>
-                            <option *ngFor="let medico of medicos" [value]="medico.id">{{ medico.nombre }} - {{
-                                medico.especialidad
-                                }}</option>
+                        <select id="medico" name="medico" class="w-full" required>
+                            <option *ngFor="let medico of medicos" [value]="medico.id">
+                                {{ medico.nombre }} - {{ medico.especialidad }}
+                              </option>
                         </select>
                     </div>
                     <!-- <div class="form-group">
@@ -30,11 +34,7 @@
                     </div> -->
                     <div class="form-group">
                         <label for="fecha">Fecha</label>
-                        <input type="date" id="fecha" name="fecha" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="fecha">Fecha</label>
-                        <input type="date" id="fecha" name="fecha" required>
+                        <input type="date" id="fecha" name="fecha" class="w-full" required>
                     </div>
                     <!-- <div class="form-group">
                         <label for="hora">Hora</label>
@@ -42,13 +42,13 @@
                     </div> -->
                     <div class="form-group">
                         <label for="hora">Hora</label>
-                        <input type="time" id="hora" name="hora" required>
+                        <input type="time" id="hora" name="hora" class="w-full mb-1" required>
                     </div>
-                    <div class="form-group">
-                        <label for="hora">Hora</label>
-                        <input type="time" id="hora" name="hora" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Agendar Cita</button>
+
+                    <button type="submit"
+                        class="text-center py-2 px-4 bg-[#7158e8] text-white rounded-lg hover:bg-[#8e8be6] disabled:bg-gray-300 disabled:cursor-not-allowed">
+                        Agendar Cita
+                    </button>
                 </form>
             </div>
         </div>

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CitaService } from '../../../service/cita.service';
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 
 @Component({
     selector: 'app-agendar-cita',
     templateUrl: './agendar-cita.component.html',
-    styleUrls: ['./agendar-cita.component.scss']
+    styleUrls: ['./agendar-cita.component.scss'],
+    imports: [CommonModule]
+
 })
 export class AgendarCitaComponent implements OnInit {
     medicos: any[] = [];
@@ -22,6 +24,7 @@ export class AgendarCitaComponent implements OnInit {
     ngOnInit(): void {
         this.citaService.getMedicos().subscribe(data => {
             this.medicos = data;
+            console.log(this.medicos)
         });
     }
 

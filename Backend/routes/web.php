@@ -8,11 +8,7 @@ Route::get('/', function () {
 });
 
 
-// Route::post('/citas', [CitaController::class, 'store']); // Registrar cita
-// Route::get('/citas/estudiante/{estudiante_id}', [CitaController::class, 'citasPorEstudiante']); // Consultar citas de estudiante
-// Route::put('/citas/cancelar/{id}', [CitaController::class, 'cancelarCita']); // Cancelar cita
-
-
-Route::post('/citas', [CitaController::class, 'registrarCita']);
-
-Route::get('/citas/estudiante/{estudiante_id}', [CitaController::class, 'citasPorEstudiante']);
+Route::post('/citas', [CitaController::class, 'registrarCita']); // Agendar cita
+Route::get('/citas/estudiante/{estudiante_id}', [CitaController::class, 'citasPorEstudiante']); //Ver cita
+Route::delete('/citas/{citasId}', [CitaController::class, 'destroy']); // Cancelar cita
+Route::get('/medicos-total', [CitaController::class, 'medicosTotal']);// Ver medicos

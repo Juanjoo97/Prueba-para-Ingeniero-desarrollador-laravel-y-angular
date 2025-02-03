@@ -1,1 +1,68 @@
-Prueba tecnica
+# Proyecto LARAVEL & ANGULAR
+
+Este proyecto incluye un backend, un frontend y un archivo SQL para la creación de tablas.
+
+## Estructura del Proyecto
+
+```
+/backend        # Código fuente del backend
+/frontend       # Código fuente del frontend
+/README.md      # Documentación del proyecto
+/create_tables.sql  # Script SQL para la creación de tablas
+```
+
+## Tecnologías Utilizadas
+
+- **Backend:** Laravel 11 
+- **Frontend:** Angular
+- **Base de Datos:** MySQL 
+
+## Instalación
+
+### Backend
+
+1. Navegar al directorio del backend:
+   ```sh
+   cd backend
+   ```
+2. Instalar dependencias:
+   ```sh
+   composer install
+   ```
+3. Configurar el archivo `.env`
+   ```sh
+   cp .env.example .env
+   ```
+4. Migrar la base de datos:
+   ```sh
+   php artisan migrate
+   ```
+5. Iniciar el servidor:
+   ```sh
+   php artisan serve
+   ```
+
+### Frontend
+
+1. Navegar al directorio del frontend:
+   ```sh
+   cd frontend
+   ```
+2. Instalar dependencias:
+   ```sh
+   npm install
+   ```
+3. Iniciar el servidor de desarrollo:
+   ```sh
+   ng serve  # Para Angular
+   ```
+
+## Base de Datos
+
+El script `create_tables.sql` contiene la estructura de la base de datos necesaria para el proyecto. Puedes ejecutarlo en tu gestor de base de datos preferido:
+
+```sh
+mysql -u usuario -p base_de_datos < create_tables.sql
+```
+
+

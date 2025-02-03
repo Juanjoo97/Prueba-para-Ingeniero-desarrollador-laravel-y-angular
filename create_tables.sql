@@ -5,6 +5,11 @@ CREATE TABLE estudiante (
     programa_academico VARCHAR(100) NOT NULL
 );
 
+INSERT INTO estudiante (nombre, correo, programa_academico) VALUES
+('Carlos López', 'carlos.lopez@example.com', 'Ingeniería de Sistemas'),
+('María García', 'maria.garcia@example.com', 'Medicina'),
+('Jorge Rodríguez', 'jorge.rodriguez@example.com', 'Derecho');
+
 CREATE TABLE medico (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
@@ -29,4 +34,5 @@ CREATE TABLE citas (
     FOREIGN KEY (medico_id) REFERENCES medico(id) ON DELETE CASCADE
 );
 
-
+INSERT INTO citas (estudiante_id, medico_id, fecha, hora, estado)
+VALUES (1, 2, '2025-02-10', '09:30:00', TRUE); 
