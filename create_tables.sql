@@ -24,7 +24,7 @@ CREATE TABLE citas (
     medico_id INT NOT NULL,
     fecha DATE NOT NULL,
     hora TIME NOT NULL,
-    estado ENUM('pendiente', 'confirmada', 'cancelada', 'completada') NOT NULL DEFAULT 'pendiente',
+    estado BOOLEAN NOT NULL DEFAULT FALSE, -- 0: Pendiente, 1: Confirmada
     FOREIGN KEY (estudiante_id) REFERENCES estudiante(id) ON DELETE CASCADE,
     FOREIGN KEY (medico_id) REFERENCES medico(id) ON DELETE CASCADE
 );
